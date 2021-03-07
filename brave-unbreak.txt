@@ -6,7 +6,10 @@
 ||aps.hearstnp.com^$script,image
 ! brave.com specfic filters
 @@||ads.brave.software^$first-party
+@@||ads-admin.bravesoftware.com^$first-party
 @@||ads.bravesoftware.com^$first-party
+@@||ads-admin.brave.com^$first-party
+@@||ads-admin.brave.software^$first-party
 @@||ads.brave.com^$first-party
 ! stats.brave.com
 stats.brave.com#@#adsContent
@@ -217,9 +220,7 @@ livemint.com##+js(aeld, DOMContentLoaded)
 uptostream.com,tirexo.lol##+js(acis, window.a)
 @@||tirexo.lol^$generichide
 ! portscanning script
-sciencedirect.com,ebay.com,ebay-kleinanzeigen.de##+js(acis, tmx_post_session_params_fixed)
-! 1p Tracking/fingerprinting
-academy.com,att.com,backcountry.com,bestbuy.com,buybuybaby.com,discover.com,discovercard.com,eddiebauer.com,finishline.com,kohls.com,macys.com,marshalls.com,mouser.com,pnc.com,publix.com,sierra.com,staples.com,usbank.com##+js(acis, _cf)
+sciencedirect.com,ebay.com,ebay-kleinanzeigen.de,tdbank.com##+js(acis, tmx_post_session_params_fixed)
 ! megaup.net
 megaup.net#@#.adBanner
 ! Anti-adblock: dianomi-anti-adblock
@@ -266,6 +267,9 @@ chicago.suntimes.com,theverge.com,vox.com,eater.com,polygon.com,sbnation.com,cur
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=player.abacast.net
 ! Potential Tracker, Annoyance
 ||govdelivery.com^$third-party
+! Whatleaks nullifer
+$websocket,domain=whatleaks.com 
+whatleaks.com##+js(acis, init_port_check_waiting)
 ! Anti-Brave checks
 krunker.io,filecr.com,lyckansforskola.com,gommonauti.it,gugo.site,sybertrek.com,btdig.com,archive.is,archive.today,archive.vn,archive.fo,archive.md,archive.li,archive.ph,archivecaslytosk.onion,archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion##+js(aopw, navigator.brave)
 archive.is,btdig.com,archive.today,archive.vn,archive.fo,archive.md,archive.li,archive.ph,archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion##+js(acis, document.cookie, document.location.href)
@@ -305,17 +309,14 @@ nytimes.com##+js(acis, document.cookie, PURR_COOKIE_NAME)
 ||fundingchoicesmessages.google.com^$third-party,badfilter
 ! To counter $ghide in uBO
 geekzone.co.nz,elpais.com,abc.es,lapresse.ca##div[style*="box-shadow: rgb(136, 136, 136) 0px 0px 12px; color: "]
-geekzone.co.nz##.fc-ab-root > .fc-dialog-container
 ! all3dp.com (google funding)
 @@||all3dp.com^$generichide
 all3dp.com##.ad-container--loaded
 all3dp.com##.ad-container--horizontal
 all3dp.com##.ad-container__provider
-! googlefunding (non-overlay, bottom window) as seen on geekzone.co.nz
-##.fc-ab-root > .fc-dialog-container
 ! googlefunding popup
-nativeplanet.com,elmundo.es,abc.es,elpais.com,goodreturns.in,drivespark.com,gizbot.com,telva.com,geekzone.co.nz,lapresse.ca,all3dp.com,click.in,filmibeat.com,boldsky.com,careerindia.com##+js(acis, trustedTypes, console)
-nativeplanet.com,elmundo.es,livejournal.com,abc.es,elpais.com,goodreturns.in,drivespark.com,gizbot.com,telva.com,lapresse.ca,click.in,filmibeat.com,boldsky.com,careerindia.com##+js(acis, JSON.stringify, instanceof)
+nativeplanet.com,elmundo.es,abc.es,elpais.com,goodreturns.in,drivespark.com,gizbot.com,ign.com,uol.com.br,telva.com,geekzone.co.nz,lapresse.ca,all3dp.com,click.in,filmibeat.com,boldsky.com,careerindia.com##+js(acis, trustedTypes, console)
+natlawreview.com,nativeplanet.com,elmundo.es,livejournal.com,abc.es,elpais.com,goodreturns.in,drivespark.com,gizbot.com,telva.com,lapresse.ca,click.in,filmibeat.com,boldsky.com,careerindia.com##+js(acis, JSON.stringify, instanceof)
 ! googlefunding (latimes.com) (fix scroll)
 latimes.com##body:style(overflow: auto !important;)
 ! hide google fc popup and overlay
